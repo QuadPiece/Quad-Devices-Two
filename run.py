@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 
 @app.route('/')
-def devices():
+def lister():
   return render_template('main.html', devices=devices)
 
 
