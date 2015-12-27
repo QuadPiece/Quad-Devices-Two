@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <title>Devices</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <div class="site">
+      <p class="title">
+        Quad's really shitty device list
+      </p>
+      {% for device in devices %}
+      <div class="unit {{ device.color }}">
+        <div class="row">
+          <p class="label">Name:</p>
+          <p class="data">{{ device.name }}</p>
+        </div>
+        <div class="row">
+          <p class="label">Type:</p>
+          <p class="data">{{ device.type }}</p>
+        </div>
+        <div class="row">
+          <p class="label">Usage:</p>
+          <p class="data">{{ device.usage }}</p>
+        </div>
+        {% if device.CPU %}
+        <div class="row">
+          <p class="label">CPU:</p>
+          <p class="data">{{ device.CPU }}</p>
+        </div>
+        {% endif %}
+        {% if device.RAM %}
+        <div class="row">
+          <p class="label">RAM:</p>
+          <p class="data">{{ device.RAM }}</p>
+        </div>
+        {% endif %}
+        {% if device.GPU %}
+        <div class="row">
+          <p class="label">GPU:</p>
+          <p class="data">{{ device.GPU }}</p>
+        </div>
+        {% endif %}
+        {% if device.OS %}
+        <div class="row">
+          <p class="label">OS:</p>
+          <p class="data">{{ device.OS }}</p>
+        </div>
+        {% endif %}
+        {% if device.storage %}
+        <div class="row">
+          <p class="label">Storage:</p>
+          <p class="data">{{ device.storage }}</p>
+        </div>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>
